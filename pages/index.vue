@@ -1,7 +1,56 @@
 <template>
-  <Tutorial/>
+  <component
+    :is="story.content.component"
+    v-if="story.content.component"
+    :key="story.content._uid"
+    :blok="story.content"
+  />
 </template>
 
 <script>
-export default {}
+export default {
+  name: 'Home',
+  asyncData(context) {
+
+    // Load the JSON from the API - loadig the home content (index page)
+    return context.app.$storyapi
+      .get('cdn/stories/home', {
+        version: 'draft',
+      })
+      .then((res) => {
+        return res.data
+      })
+      .catch((res) => {
+        if (!res.response) {
+          context.error({ statusCode: 404, message: 'Failed to receive content form api' })
+        } else {
+          context.error({ statusCode: res.response.status, message: res.response.data })
+        }
+      })
+  },
+  data() {
+    return {
+      story: { content: {} },
+    }
+  },
+  mounted() {
+    this.$storybridge(() => {
+      // eslint-disable-next-line no-undef
+      const storyblokInstance = new StoryblokBridge()
+      // Use the input event for instant update of content
+      storyblokInstance.on('input', (event) => {
+        if (event.story.id === this.story.id) {
+          this.story.content = event.story.content
+        }
+      })
+      // Use the bridge to listen the events
+      storyblokInstance.on(['published', 'change'], (event) => {
+        this.$nuxt.$router.go({
+          path: this.$nuxt.$router.currentRoute,
+          force: true,
+        })
+      })
+    })
+  },
+}
 </script>
