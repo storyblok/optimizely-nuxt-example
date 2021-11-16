@@ -9,23 +9,16 @@
 
 <script>
 export default {
-  name: 'Home',
+  name: 'AbTestPage',
   asyncData(context) {
-
-    // Load the JSON from the API - loadig the home content (index page)
+    const version = context.query._storyblok || context.isDev ? 'draft' : 'published'
+    const fullSlug = context.route.path === '/' || context.route.path === '' ? 'home' : context.route.path
     return context.app.$storyapi
-      .get('cdn/stories/home', {
-        version: 'draft',
+      .get(`cdn/stories/${fullSlug}`, {
+        version,
       })
       .then((res) => {
         return res.data
-      })
-      .catch((res) => {
-        if (!res.response) {
-          context.error({ statusCode: 404, message: 'Failed to receive content form api' })
-        } else {
-          context.error({ statusCode: res.response.status, message: res.response.data })
-        }
       })
   },
   data() {
