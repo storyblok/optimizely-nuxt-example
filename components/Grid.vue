@@ -3,10 +3,10 @@
     v-editable="blok"
     class="flex py-8 mb-6">
     <li
-      :key="blok._uid"
-      v-for="blok in blok.columns"
+      v-for="iblok in blok.columns"
+      :key="iblok._uid"
       class="flex-auto px-6">
-      <component :blok="blok" :is="blok.component" />
+      <component :is="blok.component" :blok="iblok"/>
     </li>
   </ul>
 </template>
