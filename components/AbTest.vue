@@ -21,7 +21,7 @@ export default {
   },
   async fetch() {
     const optimizelyClientInstance = createInstance({
-      sdkKey: 'YOUR_SDK_KEY',
+      sdkKey: this.$config.optimizelySdkKey,
     })
     await optimizelyClientInstance.onReady()
     this.activatedVariation = optimizelyClientInstance.activate(this.blok.segment.experiment, `user1`)
