@@ -1,9 +1,9 @@
 <div align="center">
-	<a  href="https://www.storyblok.com?utm_source=github.com&utm_medium=readme&utm_campaign=optimizely-nuxt"  align="center">
-		<img  src="https://a.storyblok.com/f/88751/1776x360/15e0cf2224/readme-header-optimizely.png"  alt="Storyblok Logo">
+	<a href="https://www.storyblok.com?utm_source=github.com&utm_medium=readme&utm_campaign=optimizely-nuxt" align="center">
+		<img src="https://a.storyblok.com/f/88751/1776x360/15e0cf2224/readme-header-optimizely.png" alt="Storyblok Logo">
 	</a>
-	<h1  align="center">Storyblok Optimizely Nuxt Tutorial</h1>
-	<p  align="center">Repository for the tutorial about A/B testing with <a href="https://www.storyblok.com?utm_source=github.com&utm_medium=referral&utm_campaign=optimizely-nuxt">Storyblok</a>, Optimizely and Nuxt.</p>
+	<h1 align="center">Storyblok Optimizely Nuxt Tutorial</h1>
+	<p align="center">Repository for the tutorial about A/B testing with <a href="https://www.storyblok.com?utm_source=github.com&utm_medium=referral&utm_campaign=optimizely-nuxt">Storyblok</a>, Optimizely and Nuxt.</p>
 </div>
 
 <p align="center">
@@ -28,8 +28,10 @@ and dynamic components in detail. Definitely worth a read!
 
 ### How to use
 
-For evaluation, set the tokens for Storyblok and Optimizely in `./nuxt.config.js` and `./components/AbTest.vue` respectively. Please use environment variables for a real deployment 😉.
+For evaluation, set the tokens for Storyblok and Optimizely in the environment variables (or [`.env`](./.env)) respectively. The variables are `OPTIMIZELY_SDK` and `SB_TOKEN`.
+
 Install the dependencies and start the dev environment
+
 ```bash
 npm i
 npm run dev

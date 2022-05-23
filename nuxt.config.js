@@ -46,7 +46,7 @@ export default {
     [
       'storyblok-nuxt',
       {
-        accessToken: 'YOUR_ACCESS_TOKEN',
+        accessToken: process.env.SB_TOKEN,
         cacheProvider: 'memory'
       }
     ],
@@ -54,5 +54,8 @@ export default {
 
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
+  },
+  publicRuntimeConfig: {
+    optimizelySdkKey: process.env.OPTIMIZELY_SDK
   }
 }
