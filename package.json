@@ -16,7 +16,7 @@
   },
   "dependencies": {
     "@marvr/storyblok-rich-text-vue-renderer": "^2.0.1",
-    "@optimizely/optimizely-sdk": "^4.9.1",
+    "@optimizely/optimizely-sdk": "^4.9.2",
     "@vue/composition-api": "^1.6.1",
     "core-js": "^3.22.6",
     "nuxt": "^2.15.7",
