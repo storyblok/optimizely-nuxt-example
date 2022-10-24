@@ -18,7 +18,7 @@
     "@marvr/storyblok-rich-text-vue-renderer": "^2.0.1",
     "@optimizely/optimizely-sdk": "^4.9.2",
     "@vue/composition-api": "^1.7.0",
-    "core-js": "^3.23.4",
+    "core-js": "^3.26.0",
     "nuxt": "^2.15.7",
     "storyblok-nuxt": "^2.0.1"
   },
