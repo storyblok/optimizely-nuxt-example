@@ -1,3 +1,7 @@
+> [!WARNING]
+> This repository is no longer maintained.
+> To use Optimizely with Storyblok, see the [Optimizely app](https://www.storyblok.com/docs/apps/optimizely). For a current Nuxt + Storyblok starter, use [blueprint-core-nuxt](https://github.com/storyblok/blueprint-core-nuxt).
+
 <div align="center">
 	<a href="https://www.storyblok.com?utm_source=github.com&utm_medium=readme&utm_campaign=optimizely-nuxt" align="center">
 		<img src="https://a.storyblok.com/f/88751/1776x360/15e0cf2224/readme-header-optimizely.png" alt="Storyblok Logo">
